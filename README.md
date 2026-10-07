@@ -50,7 +50,7 @@ This curated directory tracks leading **cloud multi-account governance platforms
 
 Below are top-tier open-source GitHub repositories for multi-account cloud governance, policy enforcement, IaC orchestration, and FinOps cost allocation.
 
-| Open-Source Project 🐙 | GitHub Stars Badge ⭐ | License 📜 | Primary Governance & FinOps Use Case 💡 |
+| Open-Source Project 🐙 | GitHub_Stars_Badge ⭐ | License 📜 | Primary Governance & FinOps Use Case 💡 |
 | :--- | :--- | :--- | :--- |
 | **[Ansible](https://github.com/ansible/ansible)** | [<img stroke="white" src="https://img.shields.io/github/stars/ansible/ansible?style=social&color=white" alt="Stars"/>](https://github.com/ansible/ansible/stargazers) | GPL-3.0 | Cross-account agentless configuration management and cloud provisioning. |
 | **[Terraform](https://github.com/hashicorp/terraform)** | [<img stroke="white" src="https://img.shields.io/github/stars/hashicorp/terraform?style=social&color=white" alt="Stars"/>](https://github.com/hashicorp/terraform/stargazers) | BSL-1.1 | Industry standard Infrastructure as Code for multi-account infrastructure provisioning. |
