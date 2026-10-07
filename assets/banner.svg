@@ -31,10 +31,13 @@
   </defs>
 
   <style>
-    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; }
+    .title-white { fill: #ffffff; }
+    .title-accent { fill: url(#accentCyan); }
     .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; }
     .tag { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
     .card-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 14px; fill: #e2e8f0; }
+    .emoji { font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
 
     /* Keyframe Animations */
     @keyframes pulseGlow {
@@ -54,7 +57,7 @@
       100% { transform: translateY(0px); }
     }
 
-    .pulsing-orb { animation: pulseGlow 6s infinite ease-in-out; transform-origin: center; }
+    .pulsing-orb { transform-box: fill-box; transform-origin: center; animation: pulseGlow 6s infinite ease-in-out; }
     .flow-line { stroke-dasharray: 8, 8; animation: dashFlow 3s linear infinite; }
     .floating-card-1 { animation: floatCard 5s infinite ease-in-out; }
     .floating-card-2 { animation: floatCard 6s infinite ease-in-out 1s; }
@@ -80,7 +83,7 @@
   <g class="floating-card-1">
     <rect x="80" y="270" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.5" opacity="0.9" />
     <circle cx="110" cy="305" r="16" fill="#0284c7" />
-    <text x="110" y="310" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">☁️</text>
+    <text x="110" y="310" text-anchor="middle" class="emoji" font-size="14" fill="#ffffff">☁️</text>
     <text x="140" y="300" class="card-text">AWS / Azure / GCP</text>
     <text x="140" y="320" class="tag">Multi-Account Hierarchy</text>
   </g>
@@ -88,28 +91,28 @@
   <g class="floating-card-2">
     <rect x="490" y="275" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1.5" opacity="0.9" />
     <circle cx="520" cy="310" r="16" fill="#7e22ce" />
-    <text x="520" y="315" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">💳</text>
+    <text x="520" y="315" text-anchor="middle" class="emoji" font-size="14" fill="#ffffff">💳</text>
     <text x="550" y="305" class="card-text">Consolidated Billing</text>
-    <text x="550" y="325" class="tag">Unified Cost & FinOps</text>
+    <text x="550" y="325" class="tag">Unified Cost &amp; FinOps</text>
   </g>
 
   <g class="floating-card-3">
     <rect x="900" y="270" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#34d399" stroke-width="1.5" opacity="0.9" />
     <circle cx="930" cy="305" r="16" fill="#059669" />
-    <text x="930" y="310" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">🛡️</text>
+    <text x="930" y="310" text-anchor="middle" class="emoji" font-size="14" fill="#ffffff">🛡️</text>
     <text x="960" y="300" class="card-text">Policy Guardrails</text>
-    <text x="960" y="320" class="tag">OPA & IaC Automation</text>
+    <text x="960" y="320" class="tag">OPA &amp; IaC Automation</text>
   </g>
 
   <!-- Foreground Title and Subtitle Block (Guaranteed High Contrast & Visibility) -->
   <g transform="translate(600, 110)">
     <!-- Pill Badge -->
     <rect x="-140" y="-70" width="280" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
-    <text x="0" y="-49" text-anchor="middle" class="tag">⚡ CURATED FINOPS & GOVERNANCE ⚡</text>
+    <text x="0" y="-49" text-anchor="middle" class="tag">⚡ CURATED FINOPS &amp; GOVERNANCE ⚡</text>
 
     <!-- Main Title -->
-    <text x="0" y="15" text-anchor="middle" class="title">Awesome Multi-Account Governance</text>
-    <text x="0" y="55" text-anchor="middle" class="title" fill="url(#accentCyan)">&amp; Consolidated Billing</text>
+    <text x="0" y="15" text-anchor="middle" class="title title-white">Awesome Multi-Account Governance</text>
+    <text x="0" y="55" text-anchor="middle" class="title title-accent">&amp; Consolidated Billing</text>
 
     <!-- Subtitle -->
     <text x="0" y="95" text-anchor="middle" class="subtitle">Cloud Account Hierarchies • FinOps Cost Management • Open-Source Guardrails</text>
