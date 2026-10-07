@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; }
+    .tag { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+    .card-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 14px; fill: #e2e8f0; }
+
+    /* Keyframe Animations */
+    @keyframes pulseGlow {
+      0% { opacity: 0.3; transform: scale(0.98); }
+      50% { opacity: 0.7; transform: scale(1.02); }
+      100% { opacity: 0.3; transform: scale(0.98); }
+    }
+
+    @keyframes dashFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .pulsing-orb { animation: pulseGlow 6s infinite ease-in-out; transform-origin: center; }
+    .flow-line { stroke-dasharray: 8, 8; animation: dashFlow 3s linear infinite; }
+    .floating-card-1 { animation: floatCard 5s infinite ease-in-out; }
+    .floating-card-2 { animation: floatCard 6s infinite ease-in-out 1s; }
+    .floating-card-3 { animation: floatCard 5.5s infinite ease-in-out 2s; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="400" rx="16" fill="url(#bgGradient)" />
+
+  <!-- Animated Dynamic Background Elements -->
+  <circle cx="200" cy="100" r="180" fill="#3b82f6" opacity="0.15" class="pulsing-orb" filter="url(#glow)" />
+  <circle cx="1000" cy="300" r="220" fill="#8b5cf6" opacity="0.15" class="pulsing-orb" filter="url(#glow)" />
+
+  <!-- Grid Lines Overlay for Cloud/Architecture Vibe -->
+  <path d="M 0 100 H 1200 M 0 200 H 1200 M 0 300 H 1200" stroke="#334155" stroke-width="1" opacity="0.3" />
+  <path d="M 200 0 V 400 M 400 0 V 400 M 600 0 V 400 M 800 0 V 400 M 1000 0 V 400" stroke="#334155" stroke-width="1" opacity="0.3" />
+
+  <!-- Connecting Dynamic Flow Lines (in background behind text) -->
+  <path d="M 150 320 C 350 380, 450 280, 600 330 C 750 380, 900 290, 1050 330" fill="none" stroke="url(#accentCyan)" stroke-width="3" opacity="0.6" class="flow-line" />
+  <path d="M 100 280 C 300 240, 500 350, 700 300 C 850 260, 950 350, 1100 290" fill="none" stroke="url(#accentPurple)" stroke-width="2" opacity="0.5" class="flow-line" />
+
+  <!-- Interactive/Dynamic Decorative Cards at Bottom (non-overlapping with title) -->
+  <g class="floating-card-1">
+    <rect x="80" y="270" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.5" opacity="0.9" />
+    <circle cx="110" cy="305" r="16" fill="#0284c7" />
+    <text x="110" y="310" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">☁️</text>
+    <text x="140" y="300" class="card-text">AWS / Azure / GCP</text>
+    <text x="140" y="320" class="tag">Multi-Account Hierarchy</text>
+  </g>
+
+  <g class="floating-card-2">
+    <rect x="490" y="275" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#a855f7" stroke-width="1.5" opacity="0.9" />
+    <circle cx="520" cy="310" r="16" fill="#7e22ce" />
+    <text x="520" y="315" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">💳</text>
+    <text x="550" y="305" class="card-text">Consolidated Billing</text>
+    <text x="550" y="325" class="tag">Unified Cost & FinOps</text>
+  </g>
+
+  <g class="floating-card-3">
+    <rect x="900" y="270" width="220" height="70" rx="12" fill="url(#cardBg)" stroke="#34d399" stroke-width="1.5" opacity="0.9" />
+    <circle cx="930" cy="305" r="16" fill="#059669" />
+    <text x="930" y="310" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff">🛡️</text>
+    <text x="960" y="300" class="card-text">Policy Guardrails</text>
+    <text x="960" y="320" class="tag">OPA & IaC Automation</text>
+  </g>
+
+  <!-- Foreground Title and Subtitle Block (Guaranteed High Contrast & Visibility) -->
+  <g transform="translate(600, 110)">
+    <!-- Pill Badge -->
+    <rect x="-140" y="-70" width="280" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+    <text x="0" y="-49" text-anchor="middle" class="tag">⚡ CURATED FINOPS & GOVERNANCE ⚡</text>
+
+    <!-- Main Title -->
+    <text x="0" y="15" text-anchor="middle" class="title">Awesome Multi-Account Governance</text>
+    <text x="0" y="55" text-anchor="middle" class="title" fill="url(#accentCyan)">&amp; Consolidated Billing</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="95" text-anchor="middle" class="subtitle">Cloud Account Hierarchies • FinOps Cost Management • Open-Source Guardrails</text>
+  </g>
+</svg>
